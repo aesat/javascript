@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p onclick="change()" id="paragraf">naber</p>
+
+
+    <script type="text/javascript">
+    //---------------------------------------ALERT ÖRNEĞİ-----------------------------------------------------
+     alert("hello east-world")// browserda bilgi kutusu için kullanılan komut "alert"
+     
+     let a = prompt("lütfen yaşınızı giriniz", 100)// prompt kullanıcıdan veri almak için kullanılan komut
+      console.log(`sizin yaşınız ${a} dır`)// console kısmına yazdırmak için.
+
+      let b = confirm("çalışıyor musunuz")// confirm sonucu true veya false dönen questionlar ile yönlendirmeler yapar
+
+      console.log(b)
+//----------------------------------FUNCTİON EXAMPLE---------------------------------------------------------
+//  Bu func ile html tarafında belirlediğimiz p etiketine tıkladığımızda etiketin backgroundu renk değiştirecek
+      function change(){
+          document.querySelector("#paragraf").style.backgroundColor= "red"
+      };
+
+//-----------------------------------operators-----------------------------------------------------------------
+      let counter=1;
+      let c = ++counter;
+      console.log(c)
+//-------------------------------------if-else-statement-------------------------------------------------------
+let condition= 2 > 5
+
+if(condition){
+    console.log("condition is true")
+}
+else{
+    console.log("condition is false")
+}
+
+
+let century=prompt("içinde bulunduğumuz yüzyıl")
+
+if(century==21){
+    console.log("correct answer")
+}
+else if(century==20){
+    console.log("it was past century")
+}
+else(
+    console.log("it is not true")
+)
+
+let number = prompt("enter a number",0)
+
+if(number<0){
+  console.log(-1)
+}
+else if(number>0){
+    console.log(1)
+}
+
+else{
+   console.log(0)
+}
+
+
+
+    </script>
+</body>
+</html>
