@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    //birden fazla olasılığın olduğu durumlara örnek kod 
+     let hour = prompt("saati giriniz")
+
+     if(hour<9 || hour>18 ){
+         alert("mesai saatlerinde değiliz")
+     }
+     else{
+         alert("hizmet saatleri içerisindeyiz")
+     }
+     // or(||) operatörü varsa durumlardan ilk hangisi true dönerse o yazdırılır 
+     let firstName = "ahmet ";
+     let lastName = " esat";
+     let nickName = " a.esat";
+
+     alert( firstName || lastName || nickName || "Anonymous");
+
+     //---------------------- simple Check the login Codes----------------------------
+
+     let admin=prompt("who is there?","enter your nickname")
+
+     if(admin=="admin"){
+         let pasword=prompt("enter your password")
+         if(pasword==1234){
+             alert("welcome admin")
+         }
+         else{
+             alert("wrong password")
+         }
+     }
+     else{
+         alert("i don't know you")
+     }
+    </script>
+</body>
+</html>
