@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    let i = 0 // bu işlemle i 5'ten küçük olduğu sürece alert edecek.
+    while(i<2){
+        alert(i)
+        i++
+    }
+     
+    //Aşağıdaki örnekte do bloklarının arasına yazdığımız kodlar while içindeki şart sağlandığı sürece uygulanır
+    do{
+        document.write(i + "<br>")
+     i++
+    }
+    while(i<20)
+  //for döngüsünde 3 bölüm vardır ilki değişkenin tanımlandığı ikincisi hangi koşulda çalışacağı üçüncüsü ise
+  // koşul sağlanırsa ne yapılacağıdır.
+    for(a=0 ; a<10 ; a++){
+        document.write(a+"<br>")
+    }
+
+    for(c=0 ; c < 10 ; c++){
+        if(c%2)
+        {
+            console.log(c)
+        }
+    }
+
+//------------------------Asal sayıları döndüren kod bloğu----------------------------------------------------
+
+for(i = 2 ; i<10 ; i++){
+
+    for(j=2 ; j<i ; j++){
+        if(i%j==0){
+            i++
+        }
+    }
+
+    alert(i)
+
+}
+
+
+    </script>
+</body>
+</html>
