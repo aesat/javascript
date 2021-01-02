@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+      let a = prompt("sayı gir")// a değerini istediğimiz kısın
+      let b = prompt("sayı gir")//b değerini istediğimiz kısım
+      function pow(a,b){
+        let result = a
+          for(i=1;i<b;i++){//for döngüsüyle b değeri kadar a değerinin kendisiyle çarpılmaısnı sağlıyoruz
+              result*=a
+          }
+          
+
+          if(a<0||b<1){//buradaki if yapısı ile eğer negatif bir değer girilirse positif değer isteyen bir alert var 
+              alert("please enter positive numbers")
+          }
+          else{
+            return result // fonksiyonun sonunda result değerinin dönmesini istiyoruz
+          }
+      }
+      alert(pow(a,b)) //burda ise fonksiyonun içine parametlereleri vererek alert etmesini istiyoruz
+
+    </script>
+</body>
+</html>
