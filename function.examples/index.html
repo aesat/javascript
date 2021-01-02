@@ -25,6 +25,29 @@
       }
       alert(pow(a,b)) //burda ise fonksiyonun içine parametlereleri vererek alert etmesini istiyoruz
 
+
+      //---------------------------------------Arrow-Functions-------------------------------------
+
+    function sum(c,d){//bu örnek altta arrow ile yapılmış fonksiyonun aynısı
+        return c+d
+    }
+     
+    alert(sum(1,2))
+//--------------------------arrow ile yapılmış basit bir fonksiyon
+    let sub = (e,f)=> e-f//Eğer fonksiyon içindeki işlem tek sıra ise köşeli parantez açmaya gerek yok 
+
+    alert(sub(6,2))
+//--------------------------
+     
+    let div = (g,h)=>{//eğer fonksiyon içinde birden fazla komut olacaksa köşeli parentez kullanmamız gerekir
+         let result = g/h
+            
+         return result
+        }
+
+        alert(div(21,3))
+
+
     </script>
 </body>
 </html>
