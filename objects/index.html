@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+// Objeleri let ile isimlendirip daha sonra köşeli parantez içine alıp değerlerimizi
+// aralara virgül koyarak verebiliriz
+let user = {
+        name : "john",//user objesinin name değeri tanımladı
+        age : 23,
+        city: "Adıyaman",
+    }
+
+    alert(user.name)//istenilen objenin istenilen değerini alert etmek için önce objenin ismi
+    alert(user.age)// daga sonra obje içinde isrenen keyin adını yazıyoruz
+    delete user.age// delete komutu ile bir property silebiriz
+
+
+let key = prompt("which property of user do you want","")//bu komutla userin hangi özelliğini istediğini soruyoruz
+alert(user[key])//burda ise önce userdan veri alacağımızı sonra veriyi yukarıda belirttiğimiz promt komutu 
+                 // ile alacağımızı belirtiyoruz.
+//-------------------------farklı bir nesne tanımlama yöntemi----------------------------------------------
+                 let client={}
+
+                 client.age=23
+                 client.name= "Aslan"
+
+                 alert(client.age)
+                 alert(client.name)
+//-------------------------------------Manav Örneği----------------------------------------------------------
+
+let fruits = {
+    banana : 5,
+    apple : 6,
+    orange : 7,
+    watermelon : 8,
+    cherry : 9,
+}
+
+let comput = prompt("which fruits do you want ?","")
+
+alert(fruits[comput])
+
+
+//----------------------------User Maker Function---------------------------------------------------------
+
+let userMaker = (name,age,city)=>{//fonksiyona 
+    return {
+        name : name,
+        age: age,
+        city: city
+    }
+}
+
+let user1 = userMaker("esat",24,"adıyaman")
+
+alert(user1.age)
+
+//-------Obje isimlendirmelerinde fonksiyonlarda ya da değişkenlerdeki gibi kısıtlamar yok aşağıda olduğu gibi---
+let obj = {
+    for: 5,
+    let: 6,
+    return: 7,
+    function: 8,
+    
+}
+
+alert(obj.for+obj.function+obj.let+obj.return)
+
+//---------------------------obje içinde property sorgulama---------------------------------------------
+
+let studentClass={//objemizi tanımladık değerlerimizi verdik
+    student1: "Ahmet",
+    student2: "Mehmet",
+    student3: "Feyzi",
+}
+
+alert("student1" in studentClass)// "in" yapısı ile sonucu true||false döndürecek sorgumuzu tamamladık
+alert("student2" in studentClass)//birinci örnek bulunduğu için true dönecek ikincisi ise olmadığı için 
+                                // false dönecek
+
+
+//-----------------------for..in..yapısı-------------------------------------------------------------------
+let esat={
+    age:23,
+    city:"Kahta",
+    job:"engineer",
+}
+
+for(let key in esat){//Bu yapı ile esat objesinin içindeki herbir nesnenin üzerinden geçerek key adında bir
+    alert(esat[key])// değişken tanımlanacak ve sonra alert edilecek
+}
+
+    </script>
+</body>
+</html>
