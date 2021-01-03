@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    //----------------------------Garbage---Collection---------------------------------------------------
+    // bu konunun asıl mantığı bir objenin bellekte tutulabilmesi için global ile direkt ya da indirekt
+    // bağının olması gerektiğidir. Eğer bir nesnenin hem global ile direkt bağlantısı hem diğer nesnelerle
+    // bağlantısı kesilirse o nesne silinir ve görüntülenmez 
+    function marry(man,woman){//
+        
+        woman.husband = man;
+        man.wife = woman;
+                              //bir fonksiyon ile nesnenin tanımlanması
+          return {
+            father: man,
+            mother: woman
+        }
+    }
+
+    let family = marry({name:"john"},{name:"lisa"})//fonksiyonda tanımlanan nesnelerin objeye çağırılması
+    delete family.mother//mother ojesini sildik mother objesine globalden değil father objesi üzerinden erişilecek
+    console.log(family)
+
+   </script>
+</body>
+</html>
