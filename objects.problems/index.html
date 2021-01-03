@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    //----------------------------for in metodu ile toplama işlemi------------------------------
+
+    let numbers={        // key değerlerini tanımladığımız kısım
+        number2: 240,
+        number1: 100,
+        number3: 437,
+        number4: 26,
+    }
+
+    let sum=0 //consolde döndürebilmek için 0 olarak tanımladığımız değişken
+
+    for(let key in numbers){//bu kısımda key adı verilen değişkene numbers objesinin içindeki değerlerin
+                            //herbirini sırasıyla bastıracak kod bloğu yazıldı
+        sum+=numbers[key]// Bu kısımda ise 0 olarak tanıttığımız sum değişkeni ile sırasıyla 
+                         // numbersin içindeki değerleri önce key'e sonra numberse son olarakta sum'a atadık
+    }
+
+    console.log(`yapılan işlemin sonucu ${sum}`)// son olarak toplama işlemini konsola yazdırdık.
+
+    </script>
+</body>
+</html>
