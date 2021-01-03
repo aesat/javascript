@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    let user = {   //aynı objeyi iki farklı değişkene atadığımızda objeler kopyalanmaz 
+        name: "john",// her iki değişkende aynı objeyi referans alır
+        age: 23,
+    }
+
+    let admin = user // Burda admin değişkeniyle user'i birbirine eşitledim 
+
+    admin.name="esat"// burda ise admin değişkeninin name parametresini değiştirdim ancak bu değişiklik
+                     // iki obje içinde geçerli çünkü ikiside aynı objeyi referans alır
+
+    console.log(user.name)//user.name çağırdık ancak admin.namede değişiklik yaptığımız için değer "john" değil
+                          // "esat" olarak dönecek.
+
+
+    let a = {}   
+    let b = a                    // bu örneğin sonucu da true dönecek çünkü referanslar aynı  
+    console.log(a==b&&a===b)
+    
+    let c = {}
+    let d = {}                   //bu örnek false dönecek objeler boş olsa da iki farklı obje var.
+    console.log(c==d || c===d)
+
+    //------------------------------cloning-object----------------------------------------------------
+    //Eğer bir objeyi ikinci bir değişken için referans olarak kullanmak istemiyorsak klonlamak istiyorsak
+    // aşağıdaki kod bloklarını uygulamamız gerekli
+
+    let client={
+        name: "esat",  //client objesini tanımladık
+        age: 24,
+    }
+
+    let clone={} // boş bir obje yarattık
+
+    for(let key in client){
+        clone[key]=client[key] //bu işlem ile her bir client değerini clone objesine kopyaladık
+    }
+
+    clone.name = "ateş"//burdan clone objesinin name değerini değiştirdik değiştirdir
+
+    console.log(client.name)//normalde değişmesi gereken client.name klonlama işlemi yapıldığı için değişmedi
+
+
+    //------------------Object.assign------------------------------------------------------------------------
+    let market = {
+        name:"migros",
+        age: 3
+    }
+
+    let permission = {
+        sellingAlcohol: true,
+        sellingFish: false
+    }
+
+    let market2 = {
+        name: "carfoursa"
+    }
+
+    Object.assign(market, permission)//birinci kısım içine alan ikinci kısım ise giden obje değerlerini belirler
+
+    Object.assign(market, market2)
+
+    console.log(market)
+
+    console.log(market2)
+    </script>
+</body>
+</html>
