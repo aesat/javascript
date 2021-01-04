@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+//------------------------------------------Constructor--Function------------------------------------------------
+
+    function Person(name,surname,age,city){//constructor functionlar isimlendirilirken ilk harf büyük yazılır
+
+        this.name=name,
+        this.surname=surname,
+        this.age=age,
+        this.city=city,
+
+        this.fullInfo=()=>{
+            return name+" "+surname+" "+age+" "+city
+        }
+    }
+
+    let person1= new Person("Esat","Ordu","24","Adıyaman") // Bu kısımda new methodu ile person1 içine değer atadık
+
+    console.log(person1.fullInfo())//console log ile Person içindeki fullInfo methodunu bastırdık
+
+    </script>
+</body>
+</html>
