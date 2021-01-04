@@ -26,6 +26,20 @@
 
     console.log(person1.fullInfo())//console log ile Person içindeki fullInfo methodunu bastırdık
 
+    /////------------------------new Object() metodu ile obje tanımlamak---------------------------
+
+
+    let user = new Object() //user değişkenini oluşturup new metodu ile ona argüman ataması yapılacağını belirttik
+    user.name="john"
+    user.surname="dere"
+    user.age= 25
+    user.fullName=function(){ //usera fullName adında fonksiyon tanımladık
+        console.log(this)// this sorgulaması ile bu fonksiyonun hangi obje içine tanımlandığını göreceğiz
+        return this.name+" "+this.surname
+    }
+
+    console.log(user.fullName())// burada ise objenin içine tanımladığımız metodu çağırıyoruz
+
     </script>
 </body>
 </html>
