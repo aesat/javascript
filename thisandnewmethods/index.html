@@ -38,7 +38,17 @@
         return this.name+" "+this.surname
     }
 
-    console.log(user.fullName())// burada ise objenin içine tanımladığımız metodu çağırıyoruz
+    console.log(user.fullName())// BURADA ise objenin içine tanımladığımız metodu çağırıyoruz
+
+    //*----------------------------Object.create()metodu ile yeni bir obje oluşturma--------------------
+
+    let user2 = Object.create(user)//create metodu ile userdaki propertyleri user2 ye kopyaladık
+
+    user2.name="esat"//burda propertylere argüman atadık
+    user2.surname="ordu"
+    console.log(user2)
+    console.log(user2.fullName())// burda user2 de tanımlanmamış olsa da userda tanımlanmış
+                                 // bir fonksiyonu invook ettik.
 
     </script>
 </body>
