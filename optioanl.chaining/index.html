@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    let user = {} //içine değer atamadığımız bir obje oluşturduk
+    console.log(user)//sonra o objeyi çağırdık ve çağırma işlemi başarılı olarak dönecektir
+    console.log(user.address)//bu objeninin içinden bir key çağırdığımızda o objenin içinde böyle bir
+                             // value olmadığı için undefined olarak sonuç dönecektir
+                            //ÖNEMLİ!!!!!console.log(user.address.street)ÖNEMLİ!!! burda ise obje içine
+                            // obje olarak atanmış bir nesnenin
+                            // keyini sorguladık burda sonuç error dönecek ancak bu işimize yaramaz
+                            // çünkü biz bulunamadı "undefined" dönmesini istiyoruz.
+    console.log(user?.address)
+    console.log(user?.address?.street)// ?. metodu ile bütün zinciri sorgulatıp varsa bize değeri verecek yoksa 
+                                      // error vermek yerine undefined dönecek
+                                      
+    let admin = {
+        isAdmin: ()=> console.log("i am admin")//bir obje ve bu objenin içine bir fonksiyon tanımladık
+    }
+
+    let customer = {}// boş bir obje tanımladık
+
+    admin.isAdmin?.()//burda optional chain metodu ile admin objesinin içinde isAdmin metodu 
+                     // varsa çalıştırsın dedik ve çalıştırdı.
+    customer.isAdmin?.()//ancak burda objenin içinde bulunmadığı için çalışmayacak
+
+
+    let user1 = {
+        firstName: "john"
+    }
+
+    let user2 = {}
+    
+    let key = "firstName"
+
+   console.log(user1?.[key]) 
+   console.log(user2?.[key])     
+    </script>
+</body>
+</html>
