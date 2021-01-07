@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    let instruments = ["bisturi","penset","koher","makas"]
+    let numbers = ["one","two","three","four"]
+
+    let add = instruments.splice(1,1,"mosquito")//splice() metodunun içine yazılan ilk eleman nerden başlayacağını
+    let add2 = numbers.splice(2,0,4,5)//ikinci eleman kaç adım gideceğini yazar ve siler ondan sonra yazılanları
+                                      // ise arrayin içine ekler. bazı durumlarda silme yapmadan ekleme yapılır.
+    console.log(instruments)
+    console.log(numbers)
+//-----------------------------------------------------------------------------------------------------
+    let letter = ["a","b","c","d"]// kelime anlamı dili olan slice() metodu ile bir arrayin içindekileri
+    let copy = letter.slice(2)    // başka bir arrayin içine kopyalayabiliriz.
+
+    console.log(letter)
+    console.log(copy)
+//-------------------------------------------------------------------------------------------------------
+    let send = instruments.concat(numbers) //concat() metodu ile bir arrayi komple başka bir arraya ekleyebiliriz
+    console.log(send)
+//------------------------------------------------------------------------------------------------------------
+    
+      //forEach() metodu ile array içindeki her bir itema metodun içine yazılan fonksiyon uygulanır.
+    letter.forEach(function(item,index){console.log(`bu ${item} ${index}. indextir`)})
+//------------------------------------------------------------------------------------------------------------
+
+    
+    </script>
+</body>
+</html>
