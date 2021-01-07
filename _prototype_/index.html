@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    let user = {
+        name: "john",
+        surname: "doe",// Objemizi bir kaç property ve bir metod ile tanımladık
+        age: 32,
+        job: "farmer",
+
+        fullName(){
+            return this.name + " " + this.surname
+        }
+    }
+
+    console.log(user)
+    console.log(user.fullName()) // metodumuzu çağırdık ve consolde görüntüledik ancak objenin içinde olmayan
+    console.log(user.hasOwnProperty("name"))//bir fonksiyon çağırsaydık error alacaktık. Yandaki metod objenin
+                                //içinde olmamasına rağmen çalıştı nedeni ise genel bir obje kavramının
+                                //olması ve o objenin default değerlerinin olması biz her obje yarattığımızda
+                                //genel objeden miras olarak gelen bazı metodlar var bu inheritance(kalıtım)dır.
+                                
+    function Person(name, surname, age){
+        this.name = name
+        this.surname = surname         //constructor functionu oluşturduk
+        this.age = age
+        /*this.writeName = ()=> {
+                  return this.name + "" + this.surname
+        }*/
+    }
+
+    let esat = new Person("esat","ordu",42) //new () metodu ile yeni bir obje oluşturuldu
+    esat.job = "nurse" // esat objesine başka bir property ekledik
+
+    console.log(esat)   // consola person objesini çağırdık ve obje geldi
+    console.log(esat.job)//böylece esatın job propertysi oluştu ama Person constructurunun yok
+                         //yani artık esat objesi Person + job birleşimiyle oluşuyor
+    //person objesi oluşurken Person constructoru ile OBJECT birleşti ve oluşturdu
+
+    //OBJECT+ name + surname + age + writeName()-------->Person + job ----------->esat 
+
+    /*normal şartlarda biz writeName() metodunu Person constructor yapısının içine tanımladık. biz her
+    yeni obje oluşturduğumuzda içine writeName metodu yerleşecek bu durum bizi yavaşlatır. writeName()
+    metodunu alıp OBJECTİN _prototype_ inin içine yerleştirirsek sadece bir kere oluşmuş olur ve her yeni
+    obje tanımlandığında otomatikmen prpototype ile objenin içine tanımlanmış olur */
+    
+    Person.prototype.writeName = ()=> {
+                  return this.name + "" + this.surname  //yukarıda yoruma alıp burda prototype içine tanımladık
+        }
+
+    let mehmet = new Person("mehmet","yiğit",26)//mehmet adında bir obje oluşturduk
+
+    console.log(mehmet)
+
+    let velat = Object.create(mehmet)//velat adında mehmetten property miras alacak bir obje oluşturduk
+                                     //normalde velat objesinin içi boş ancak velat objesinin içindeki
+                                     //propertye girince göreceğizki mehmet objesini kendine rol model almıi
+
+    velat.name = "velat" //velat objesinin name propertisini velat olarak atayınca artık miras 
+                         // olarak mehmet objesinden name almayacak diğerlerini almaya devam edecek
+
+    console.log(velat)
+    
+
+    
+
+    </script>
+</body>
+</html>
