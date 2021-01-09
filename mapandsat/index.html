@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    let breakfast = new Map() //breakfast adında bir diziye map() metodu ile tanımlamalar yapacağımızı bildirdik
+
+    breakfast.set("olive",50)//breakfast dizisinin içine key ve value değerlerini verdik
+    breakfast.set("cheese",40)
+    breakfast.set("honey",60)
+
+    console.log(breakfast)//ekrana döndürdük ve bir obje içinde geldiler
+    console.log(breakfast.size)//size metodu ile breakfastın kaç elemanı olduğunu dönüyor
+    console.log(breakfast.get("olive"))//get metodu ile keyi yazıp valueyi çağırabiliriz
+
+    for(let expensive of breakfast){// bu metod ile her bir objeyi ayrı dizi
+        console.log(expensive)      ////olarak expensive denen nesnenin içine atadık
+    }
+    
+    let visitor1 = {
+        name: "esat",  //bir obje oluşturduk
+        surname:"ordu",
+        id: 1
+    }
+
+    let visitorCounter = new Map() //bu değişkene map değeri atayacağımızı bildirdik 
+    visitorCounter.set(visitor1,120)// ve burada bir objeyi map değeri olarak atadık
+    console.log(visitorCounter)
+
+    let recipeMap = new Map([
+        ["cucumber",5],         //direkt olarak map metodunun içine bir array onun içine
+        ["tomato",7],           // ise array şeklinde key ve value si olan nesneler atadık
+        ["onion",2]
+    ])
+    for(let vegetable of recipeMap.keys()){  // for of metodu ile keys()leri döndürdük
+        console.log(vegetable)
+    }
+
+    for(let vegetable of recipeMap.values()){ // valueleri döndürdük
+        console.log(vegetable)
+    }
+
+    let obj = {
+        name: "esat",
+        surname: "ordu",  //bir obje tanımlandı
+        age: 34
+    }
+
+    let student = new Map(Object.entries(obj))//objeyi Object.entries() metodu ile değişkene atadık
+
+    console.log(student.get("name"))// objenin keyini girerek valuesini çağırdı
+
+
+    </script>
+</body>
+</html>

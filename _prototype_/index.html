@@ -50,9 +50,12 @@
     metodunu alıp OBJECTİN _prototype_ inin içine yerleştirirsek sadece bir kere oluşmuş olur ve her yeni
     obje tanımlandığında otomatikmen prpototype ile objenin içine tanımlanmış olur */
     
-    Person.prototype.writeName = ()=> {
-                  return this.name + "" + this.surname  //yukarıda yoruma alıp burda prototype içine tanımladık
-        }
+    Person.prototype.writeName = function(){
+                  return this.name + " " + this.surname  //yukarıda yoruma alıp burda prototype içine tanımladık
+        }                                          
+    console.log(esat)
+    console.log(esat.writeName())//burda esat objesinin içinde writeName() olmamasına rağmen sonuç gelecektir
+                                // çünkü writeName metodunu personun içindeki prototype içine tanımladık
 
     let mehmet = new Person("mehmet","yiğit",26)//mehmet adında bir obje oluşturduk
 
