@@ -7,30 +7,33 @@
    let sentence = "yellow fox jumped over lazy dog lazy fox jumped over big dark lazy dog"
 
    let words = sentence.split(" ")
-
-   myBox = []
-   myValue= []
-   var key = 1
-
-   for(let i = 0 ; i<words.length;i++){
+   let myBox = {}
+  
+   for(let i= 0; i<words.length; i++){
        for(let j=0; j<words.length; j++){
            if(words[i]==words[j]){
-             if(words[i] in myValue){
-                   continue
-               }
-               else{
-                   myValue[i]=words[i]
-               }
-               key+=1
+               
+              if(words[i] in myBox){
+               
+                let word = words[i]
+                myBox[word]+=1
+                break
+               
+              }
+              else{
+                  let word = words[i]
+                  myBox[word]=1
+                  break
+              }
            }
-        }
-       myBox[i]= key;
-       key=1;
+       }
    }
 
-   for(let i= 0; i< words.length; i++){
-       console.log(myBox[i]+" "+myValue[i])
-   }
+   console.log(myBox)
+
+   
+
+  
 
     
   </script>
