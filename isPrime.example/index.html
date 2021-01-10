@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    let number=Number(prompt("bir sayı giriniz"))//kullanıcıdan sayı istiyoruz
+
+    for(let i=2;i<number;i++){//alınan sayı for döngüsü ile kendisine kadar olan sayılara bölünmye çalışılıyor
+        if(number%i==0){                      //buradaki if  eğer herhangi bir sayıya bölünürse asal olmadığını
+            document.write("bu sayı asal değildir")
+            break
+        }
+        if(i+1==number){                      //buradaki if ise eğer kendisi ve bir dışında bir sayıya bölünmezse 
+            document.write("bu sayı asaldır") //asal olduğunu ekrana yazdırıyor
+        }
+    }
+    
+    </script>
+</body>
+</html>
