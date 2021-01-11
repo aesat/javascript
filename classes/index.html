@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    // Decleration Class
+
+    class Person { 
+        constructor(name, surname, age){ //class yapısı ile constructor fonksiyonu yine tanımlanabilir
+            this.name=name,
+            this.surname=surname,
+            this.age=age
+            this.friends=["çağla","esra"] 
+        }
+
+        fullName(){
+            return this.name + " " + this.surname //class yapısının güzel yanı constructor fonksiyonunun dışına 
+        }                                        // tanımladığımız fonksiyon otomotikmen protoya atanır 
+    }
+    
+    const esat = new Person("esat","ordu",21)
+    const velat = new Person("velat","bucak",21)
+
+    console.log(esat)
+    console.log(esat.fullName())
+    console.log(velat)
+    console.log(velat.fullName())
+
+    esat.friends.push("mert") //class yapısı dışında bunu protoya tanımlasaydık esata push ettiğimiz arkadaş
+                               // velatın da içine girmiş olacaktı
+    console.log(esat.friends)
+    console.log(velat.friends)
+
+    //expression class
+
+    const Employee = class {
+        constructor(name, surname, age){
+            this.name=name,
+            this.surname=surname,
+            this.age=age
+            this.friends=["arin","elis"]
+        }
+
+        fullEmployee(){
+            return this.name + " " + this.surname
+        }
+    }
+
+    const mahmut = new Employee("mahmut","doğan",42)
+
+    console.log(mahmut)
+    
+    
+    </script>
+</body>
+</html>
