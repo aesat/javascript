@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    class Person {
+        constructor(name, surname, age){
+            this.name=name,
+            this.surname=surname,
+            this.age=age
+        }
+
+        fullName(){
+            return this.name + " " + this.surname
+        }
+
+    }
+
+
+    class Engineer extends Person {//extends metodu yeni bir constructor oluşturur ancak bunu yaparken ilk
+        constructor(name,surname,age,job){//olarak Person constructorunun içindeki metodları alır ve ona ekleme
+                                          //yapar yani personu geineşletip yeni bir constructor kurar
+            super(name,surname,age)//extends ile bir insteance oluştururken superclasından aldığımız metodları
+            this.job=job           //manuel olarak girmek zorundayız daha sonra yeni tanımlayacaklarımızı gireriz
+        }
+
+        getMoney(){
+            return console.log("Para Kazan")
+        }
+    }
+                                    
+    let esat = new Engineer("esat","ordu",32,"engineer")
+
+    console.log(esat)
+    console.log(esat instanceof Person)//sonuç true dönecek çünkü esat Engineerden oluşsada enginneren atası
+                                       // yani parentsi Persondur bu durumda subclass(child) Engineer
+                                       //superclass(parent) Persondur
+    </script>
+</body>
+</html>
