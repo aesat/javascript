@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    class Person {
+        constructor(name, surname, age){
+            this.name=name,
+            this.surname=surname,
+            this.age=age
+        }
+
+        fullName(){
+            return this.name + " " + this.surname
+        }
+
+        static showName = "PERSON"//normalde tanımladığımız değişken veya metodları constructor ile çağırdığımızda 
+                                //çalışır ancak static metodunu kullanınca sadece içinde olduğu yapının sahibi
+        static staMEthod = ()=>{     //kullanabilir
+              return console.log("bu bir statik metoddur")
+        }
+    }
+
+    console.log(Person.showName)
+    console.log(Person.staMEthod())
+
+    let esat = new Person("esat","ordu",24)
+
+    console.log(esat instanceof Person)//instance=örnek demek yandaki sorgu ise "ESAT" "Personun" örneğimi
+                                    //diye sorguluyor cevap true olarak dönecek
+
+    console.log(esat.fullName())
+    
+    </script>
+</body>
+</html>
